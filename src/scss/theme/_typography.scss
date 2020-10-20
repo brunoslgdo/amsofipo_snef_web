@@ -1,0 +1,37 @@
+$font-size: (
+    title: 3.157em, // 50.52px
+    subtitle: 1.777em, // 28.43px
+    caption: 1.333em, // 21.33px
+    body: 1em, // 16px
+    small: 0.75em, // 12px
+);
+
+$font-weight: (
+    sbold: 600,
+    regular: 400,
+    light: 300,
+    elight: 200
+);
+
+:root {
+
+    @each $key, $val in $font-size {
+        --#{$key}: #{$val};
+    }
+
+    @each $key, $val in $font-weight {
+        --#{$key}: #{$val};
+    }
+}
+
+@each $key, $val in $font-size {
+    .#{$key} {
+        font-size: var(--#{$key});
+    }
+}
+
+@each $key, $val in $font-weight {
+    .#{$key} {
+        font-weight: var(--#{$key});
+    }
+}

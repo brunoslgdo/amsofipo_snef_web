@@ -1,0 +1,11 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color: teal;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}

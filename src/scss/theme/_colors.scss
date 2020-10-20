@@ -1,0 +1,19 @@
+$colors: (
+    first: '#005850',
+    second: '#00D6D4',
+    third: '#FD425F',
+    text-alt: '#FFFFFF'
+);
+
+:root {
+
+    @each $key, $color in $colors {
+        --#{$key}: #{$color}
+    }
+}
+
+@each $key, $color in $colors {
+    .#{$key} {
+        color: var(--#{$key});
+    }
+}
