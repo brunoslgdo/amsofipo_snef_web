@@ -1,0 +1,22 @@
+.bg {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__home {
+        background-color: #07aacf;
+        background-image: url('../img/bg-home.svg');
+        background-blend-mode: multiply;
+    }
+
+    &__juegos {
+        background-image: url('../img/bg-juegos.png');
+    }
+
+    &__wordfind {
+        background-image: url('../img/bg-sopa-de-letras.svg');
+        background-attachment: initial;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}

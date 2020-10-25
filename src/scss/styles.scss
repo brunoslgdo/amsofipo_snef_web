@@ -1,4 +1,19 @@
 @import 'theme/colors';
 @import 'theme/typography';
 
+@import 'layout/spacing_units';
+@import 'layout/borders_and_shadows';
 @import 'layout/reset';
+@import 'layout/box_model';
+
+@import 'components/header';
+@import 'components/memorama';
+@import 'components/infografias';
+@import 'components/asociados';
+@import 'components/foo';
+@import 'components/bg_images';
+@import 'components/card_video';
+@import 'components/flag';
+
+@import 'sections/home';
+@import 'sections/aprende-jugando';

@@ -1,0 +1,29 @@
+$spacing-units: (
+    xx: toRem(40),
+    xl: toRem(32),
+    lg: toRem(24),
+    md: toRem(16),
+    sm: toRem(8),
+    xs: toRem(4),
+);
+
+:root {
+
+    @each $key, $val in $spacing-units {
+        --#{$key}: #{$val};
+    }
+
+    --z-back: -1;
+    --z-menu: 10;
+}
+
+@each $key, $val in $spacing-units {
+
+    .#{$key} {
+        font-size: var(--#{$key});
+    }
+
+    .mb--#{$key} {
+        margin-bottom: var(--#{$key});
+    }
+}

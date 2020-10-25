@@ -1,0 +1,27 @@
+.asociados {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    row-gap: var(--xl);
+
+    @media only screen and (min-width: 568px) {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 0;
+    }
+
+    @media only screen and (min-width: 667px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media only screen and (min-width: 1024px) {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    &__item {
+        margin: auto;
+    }
+
+    &__logo {
+        transform: scale(0.72);
+    }
+}

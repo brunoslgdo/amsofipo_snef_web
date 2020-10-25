@@ -1,7 +1,14 @@
 $colors: (
     first: '#005850',
+    first-light: '#4AAF9C',
+    first-dark: '#007F6E',
     second: '#00D6D4',
+    second-light: '#CFFFFD',
+    second-dark: '#07ADCF',
     third: '#FD425F',
+    accent: '#221C35',
+    text-title: '#2e2e2e',
+    text-body: '#2e2e2e',
     text-alt: '#FFFFFF'
 );
 
@@ -15,5 +22,11 @@ $colors: (
 @each $key, $color in $colors {
     .#{$key} {
         color: var(--#{$key});
+    }
+}
+
+@each $key, $color in $colors {
+    .bg--#{$key} {
+        background-color: var(--#{$key});
     }
 }

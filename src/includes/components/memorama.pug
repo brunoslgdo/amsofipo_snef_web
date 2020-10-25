@@ -1,0 +1,5 @@
+include ../config/conf_memorama
+.memorama.border-radius
+    ul.cartas
+        each item in MEMORAMA
+            li.cartas__item: img(src=`${pathImg}${item}`, class="carta__img", alt="carta")

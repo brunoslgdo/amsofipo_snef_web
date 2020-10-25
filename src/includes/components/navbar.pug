@@ -1,0 +1,11 @@
+include ../config/conf_menu
+header.wrapper
+    nav.wrap--large.navbar
+        .navbar__logos
+            a(href="https://www.amsofipo.mx/"): img(src=`${pathImg}amsofipo-logo.svg`, class="amsofipo__logo", alt="AMSOFIPO - Asociación Mexicana de Sociedades Financieras Populares")
+            a(href="https://eduweb.condusef.gob.mx/SNEF/index.html"): img(src=`${pathImg}snef-logo.svg`, class="snef__logo", alt="SNEF - Semana Nacional de Educación Financiera 2020")
+        .menu
+            .hamburguer: .hamburguer__line
+            //- ul
+            //-     each item in MENU
+            //-         li.menu__item: a(href=`${item.href}`, class="body regular third menu__link") !{`${item.content}`}

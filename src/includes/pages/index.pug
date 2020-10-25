@@ -6,5 +6,94 @@ html(lang="es")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title AMSOFIPO | SNEF (Semana Nacional de Educación Financiera)
         link(href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap", rel="stylesheet")
+        link(href=`${pathCss}wordfind.css`, rel="stylesheet")
         link(href=`${pathCss}styles.css`, rel="stylesheet")
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="js/wordfind.js"></script>
+        <script src="js/wordfindgame.js"></script>
     body
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v8.0" nonce="1eoZrf44"></script>
+        include ../components/navbar
+
+        section.wrapper.bg.bg__home
+            .wrap--medium.home
+                article.home__child
+                    img(src=`${pathImg}personas-en-globo-aerostatico.svg`, alt="Personas en globo aerostático")
+                article.home__child
+                    h1.title.sbold.text-alt.mb--md Bienvenido
+                    p.caption.light.text-alt.mb--md Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
+
+        section.wrapper
+            .wrap--medium.aprende-jugando
+                article.aprende-jugando__child
+                    h1.title.sbold.first.mb--md Aprende jugando
+                article.aprende-jugando__child
+                    include ../components/flags
+                    //- include ../components/memorama
+
+        //- section.wrapper.bg.bg__juegos
+            //- crucigrama
+            //- article.wrap--medium
+            //-     h1.title.sbold.text-alt.mb--md Conceptos financieros
+            //- article.wrap--medium.grid-five-seven
+            //-     .grid-five-seven__child
+            //-         h2.caption.regular.text-alt.mb--md Resuelve y comprende conceptos que día a día vemos y no sabemos
+            //-         ol
+            //-             li.body.elight.text-alt Lorem ipsum dolor sit amet, consectetuer adipiscing elit lobortis
+            //-             li.body.elight.text-alt Lorem ipsum dolor sit amet, consectetuer adipiscing elit lobortis
+            //-             li.body.elight.text-alt Lorem ipsum dolor sit amet, consectetuer adipiscing elit lobortis
+            //-             li.body.elight.text-alt Lorem ipsum dolor sit amet, consectetuer adipiscing elit lobortis
+            //-     .grid-five-seven__child
+            //- sopa de letras
+            //- article.wrap--medium
+            //-     h1.title.sbold.text-alt.mb--md Tips de ahorro
+            //- article.wrap--medium.grid-five-seven
+            //-     .grid-five-seven__child
+            //-         h2.caption.regular.text-alt.mb--md Descubre palabras que te ayudarán a ahorrar en tu vida diaria
+            //-         <div id='words'></div>
+            //-         <div><button id='solve'>Resolver el juego</button></div>
+            //-     .grid-five-seven__child.bg.bg__wordfind
+            //-         <div id='puzzle'></div>
+
+        //- section.wrapper
+        //-     .wrap--medium.grid-five-seven
+        //-         article.grid-five-seven__child
+        //-             <div class="fb-page" data-href="https://www.facebook.com/JovenesDioses/" data-tabs="timeline" data-width="408" data-height="909" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/JovenesDioses/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/JovenesDioses/">Jóvenes Dioses</a></blockquote></div>
+        //-         article.grid-five-seven__child
+        //-             h1.title.sbold.text-title Infografías
+        //-             include ../components/infografias
+
+        section.wrapper.bg--accent
+            article.wrap--medium
+                h1.title.sbol.text-alt.mb--md Videos
+                include ../components/card_videos
+
+        section.wrapper
+            article.wrap--medium
+                include ../components/asociados
+
+        include ../components/foo
+
+        script.
+            var words = [
+                'activo',
+                'inflación',
+                'interés',
+                'apalancamiento',
+                'capital',
+                'crédito',
+                'liquidez',
+                'acreedores',
+                'cashflow'
+            ];
+            var gamePuzzle = wordfindgame.create(words, '#puzzle', '#words');
+            var puzzle = wordfind.newPuzzle(words,{height: 18, width:18, fillBlanks: false});
+            wordfind.print(puzzle);
+            $('#solve').click( function() {wordfindgame.solve(gamePuzzle, words);});
+
+            /* Event listeners */
+            //- $('#extra-letters').change((evt) => $('#secret-word').prop('disabled', !evt.target.value.startsWith('secret-word')));
+            //- $('#add-word').click( () => WordFindGame.insertWordBefore($('#add-word').parent()));
+            //- $('#create-grid').click(recreate);
+            //- $('#solve').click(() => game.solve());

@@ -1,0 +1,15 @@
+.infografias {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 4;
+    gap: var(--xl);
+
+    &__child:first-child,
+    &__child:nth-child(5n) {
+        grid-row: span 2;
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: repeat(16, 1fr);
+        position: relative;
+    }
+}

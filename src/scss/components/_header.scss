@@ -1,0 +1,114 @@
+header.wrapper {
+    box-shadow: 0 toRem(-6) toRem(12) rgba(0, 0, 0, .16);
+    background-color: var(--text-alt);
+    padding-top: var(--xs);
+    padding-bottom: var(--xs);
+    position: fixed;
+    width: 100%;
+    z-index: var(--z-menu);
+
+    @media only screen and (min-width: 1024px) {
+        background: transparent;
+        box-shadow: initial;
+        padding-top: var(--xl);
+        padding-bottom: var(--xl);
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: toRem(54);
+    position: relative;
+
+    &__logos {
+        @extend .border-radius;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        @media only screen and (min-width: 1024px) {
+            justify-content: center;
+            background-color: var(--text-alt);
+            box-shadow: 0 0 toRem(6) rgba(0, 0, 0, .16);
+            padding: var(--md);
+            width: initial;
+        }
+    }
+
+    .menu {
+        display: flex;
+        position: fixed;
+        right: var(--xl);
+        bottom: var(--xx);
+
+        @media only screen and (min-width: 1024px) {
+            position: initial;
+        }
+
+        &__item {
+            margin-right: var(--xx);
+            margin-top: auto;
+            margin-bottom: auto;
+
+            &:nth-child(4) {
+                margin-right: calc(var(--xx) * 2);
+
+                .menu__link {
+                    color: var(--first);
+                    font-weight: var(--sbold);
+                }
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.amsofipo__logo {
+    height: toRem(28);
+    margin-right: toRem(48);
+}
+
+.snef__logo {
+    height: toRem(32);
+}
+
+.hamburguer {
+
+    %line {
+        background-color: var(--third);
+        border-radius: var(--xs);
+        width: 1.5em;
+        height: 0.25em;
+    }
+
+    &__line {
+        @extend %line;
+        display: block;
+        position: relative;
+
+        &::after, &::before {
+            @extend %line;
+            content: '';
+            display: block;
+            background-color: inherit;
+            position: absolute;
+            width: var(--sm) !important;
+        }
+
+        &::after {
+            transform: translateY(200%);
+            left: 0;
+        }
+
+        &::before {
+            transform: translateY(-200%);
+            right: 0;
+        }
+    }
+}

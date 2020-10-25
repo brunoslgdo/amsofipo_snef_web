@@ -1,0 +1,58 @@
+.flag {
+    --circle: #{toRem(72)};
+    display: inline-flex;
+    background-color: var(--second-light);
+    border-radius: var(--sm);
+    position: relative;
+    margin-right: auto;
+    margin-bottom: calc(var(--xl) + #{toRem(36)});
+    margin-left: auto;
+
+    @media only screen and (min-width: 568px) {
+        align-items: center;
+        border-radius: var(--xl) var(--sm) var(--sm) var(--xl);
+        margin-bottom: var(--xl);
+    }
+
+    &__icon {
+        background-color: var(--third);
+        box-shadow: 0 0 0 toRem(4) var(--text-alt);
+        border-radius: 50%;
+        width: var(--circle);
+        height: var(--circle);
+        margin: auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        transform: translateY(-50%);
+
+        @media only screen and (min-width: 568px) {
+            margin: initial;
+            position: initial;
+            top: initial;
+            right: initial;
+            left: initial;
+            transform: initial;
+        }
+    }
+
+    &__content {
+        padding: toRem(52) var(--lg) var(--md);
+
+        @media only screen and (min-width: 375px) {
+            padding-right: var(--xl);
+            padding-left: var(--xl);
+        }
+
+        @media only screen and (min-width: 568px) {
+            padding: 0 var(--lg) 0 var(--md);
+        }
+    }
+
+    &__label {
+        color: var(--first-dark);
+        font-size: var(--subtitle);
+        font-weight: var(--regular);
+    }
+}

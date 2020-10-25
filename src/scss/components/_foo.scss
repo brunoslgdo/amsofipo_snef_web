@@ -1,0 +1,124 @@
+footer {
+    background-color: var(--second);
+}
+
+.foo {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas: 'header'
+                         'direccion'
+                         'contacto'
+                         'sitios'
+                         'socials'
+                         'avisos';
+    gap: var(--xl);
+    color: var(--text-alt);
+
+    @media only screen and (min-width: 568px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: 'header header'
+                             'direccion contacto'
+                             'sitios sitios'
+                             'socials socials'
+                             'avisos avisos';
+    }
+
+    @media only screen and (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: 'header header header'
+                             'direccion contacto sitios'
+                             'socials socials socials'
+                             'avisos avisos avisos';
+    }
+
+    @media only screen and (min-width: 1024px) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: 'header header header header'
+                             'avisos direccion contacto sitios'
+                             'socials socials socials socials';
+    }
+
+   &__child:nth-child(1) {
+       grid-area: header;
+       display: flex;
+       flex-direction: column;
+
+       img {
+           margin-right: auto;
+
+           &:first-child {
+               margin-bottom: var(--xl);
+            }
+        }
+
+        @media only screen and (min-width: 568px) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            img {
+                margin-right: initial;
+
+                &:first-child {
+                    margin-bottom: initial;
+                }
+            }
+       }
+   }
+
+   &__child:nth-child(2) {
+       grid-area: avisos;
+   }
+
+   &__child:nth-child(3) {
+       grid-area: direccion;
+   }
+
+   &__child:nth-child(4) {
+       grid-area: contacto;
+   }
+
+   &__child:nth-child(5) {
+       grid-area: sitios;
+   }
+
+   &__child:nth-child(6) {
+       grid-area: socials;
+       display: flex;
+       justify-content: flex-start;
+
+       @media only screen and (min-width: 1024px) {
+            justify-content: flex-end;
+       }
+   }
+}
+
+.sitios-interes {
+
+    &__item {
+        position: relative;
+
+        &::after {
+            content: url('../img/icon-arrow-forward.svg');
+            padding-left: var(--sm);
+        }
+    }
+
+}
+
+.sociales {
+    display: flex;
+
+    &__item {
+        margin-right: var(--lg);
+
+        @media only screen and (min-width: 1024px) {
+            margin-right: 0;
+            margin-left: var(--lg);
+        }
+    }
+}
